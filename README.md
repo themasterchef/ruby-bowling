@@ -1,5 +1,7 @@
 # ruby-bowling
 
+![Build status](https://travis-ci.org/themasterchef/ruby-bowling.svg?branch=master)
+
 Fun with 10-pin bowling in Ruby using a functional programming approach.
 
 ## Usage
