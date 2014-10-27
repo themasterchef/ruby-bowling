@@ -1,8 +1,11 @@
 source 'https://rubygems.org'
 
 group :test do
-  gem 'rspec'
+  gem 'rspec', '~> 3.1'
+  
+  # For benefit of Travis
+  gem 'rake', '~> 10.3'
 end
 
 # Haskell-like currying
-gem 'funkify'
+gem 'funkify', '~> 0.0.4'
