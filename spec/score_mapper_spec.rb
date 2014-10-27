@@ -1,5 +1,4 @@
-require 'rspec'
-require './score_mapper'
+require 'spec_helper'
 
 describe ScoreMapper do
   let(:mapper) {

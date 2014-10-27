@@ -1,5 +1,4 @@
-require 'rspec'
-require './frame_mapper'
+require 'spec_helper'
 
 describe FrameMapper do
   let(:mapper) {

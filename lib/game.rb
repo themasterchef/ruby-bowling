@@ -1,6 +1,6 @@
-require './score_mapper'
-require './end_game_handler'
-require './frame_mapper'
+require 'score_mapper'
+require 'end_game_handler'
+require 'frame_mapper'
 
 ##
 # Game is the 'I/O' class. It stores incoming data, but computation is done

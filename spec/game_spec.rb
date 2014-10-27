@@ -1,5 +1,4 @@
-require 'rspec'
-require './game'
+require 'spec_helper'
 
 ##
 # Test the 'public API' surface of the code,
