@@ -10,7 +10,7 @@ To run, just run the following in the Terminal:
 
     cd [bowling_folder]
     bundle install
-    bundle exec rspec .
+    bundle exec rake spec
 
 ## License
 
