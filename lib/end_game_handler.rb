@@ -13,19 +13,22 @@ class EndGameHandler
       # so they are all in 1 frame.
       end_game = frames.drop(num_frames - 1).flatten
       
-      x = end_game[0] || 0
-      y = end_game[1] || 0
-      z = end_game[2] || 0
+      first_ball  = end_game[0] || 0
+      second_ball = end_game[1] || 0
+      third_ball  = end_game[2] || 0
       
-      final_frame_score = x + y + z
+      final_frame_score = first_ball + second_ball + third_ball
 
       # Replace the last N frames with one 'special' frame containing
       # the combined score.
       new_frames = frames.first(num_frames - 1)
+      
       # This is a workaround which stops the recursive logic in the score mapper
       # from being able to add the tenth frame score to the ninth, in other words
       # it stops bonus balls from being treated like triple strikes.
       new_frames << [0]
+      
+      # Now insert the actual score.
       new_frames << [final_frame_score]
       
       return new_frames

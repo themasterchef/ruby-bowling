@@ -1,3 +1,5 @@
+require 'settings'
+
 class FrameMapper
 
   ##
@@ -20,14 +22,15 @@ class FrameMapper
     else
       # Recursive case, more than 1 frame worth of shots to compute
       # Grab the head of the scores list.    
-      x = scores[0]
-    
+      first_ball = scores[0]
+      
       # A strike belongs in its own frame.
-      if x == 10
-        acc << [x]
+      if first_ball == Settings[:strike]
+        acc << [first_ball]
         return map scores.drop(1), acc
       else
-        acc << [x, scores[1]]
+        second_ball = scores[1]
+        acc << [first_ball, second_ball]
         return map scores.drop(2), acc
       end
     end
