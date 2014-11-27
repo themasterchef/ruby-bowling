@@ -7,6 +7,3 @@ group :development, :test do
   gem 'rake', '~> 10.3'
   gem 'rake-rspec', '~> 0.0.2'
 end
-
-# Haskell-like currying
-gem 'funkify', '~> 0.0.4'

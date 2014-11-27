@@ -1,5 +1,3 @@
-require 'funkify'
-
 ##
 # Though the task says 'object oriented programming', the secret here is
 # that like so many other mathsy / algorithmic problems implemented in
@@ -8,9 +6,6 @@ require 'funkify'
 # FP backend with the OOP external API surface in the Game class with
 # little trouble.
 class ScoreMapper
-
-  include Funkify
-  auto_curry
   
   ##
   # Scores all the frames bowled so far. Outputs an array of scores per frame.

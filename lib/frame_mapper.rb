@@ -1,9 +1,4 @@
-require 'funkify'
-
 class FrameMapper
-
-  include Funkify
-  auto_curry
 
   ##
   # Splits a raw array of scores

@@ -1,9 +1,4 @@
-require 'funkify'
-
 class EndGameHandler
-
-  include Funkify
-  auto_curry
 
   ##
   # When injected into the scoring flow, this

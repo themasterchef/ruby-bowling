@@ -2,7 +2,6 @@ GEM
   remote: https://rubygems.org/
   specs:
     diff-lcs (1.2.5)
-    funkify (0.0.4)
     rake (10.3.2)
     rake-rspec (0.0.2)
       rake (~> 10.0)
@@ -24,7 +23,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  funkify (~> 0.0.4)
   rake (~> 10.3)
   rake-rspec (~> 0.0.2)
   rspec (~> 3.1)

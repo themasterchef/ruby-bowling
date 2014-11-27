@@ -34,13 +34,17 @@ class Game
   # Generates a list of the scores per frame so far.
   # Useful in debugging and also visualisation.
   def score_list
-    frame_mapper = FrameMapper.new
-    score_mapper = ScoreMapper.new
-    end_game = EndGameHandler.new
+  
+    # Divide up the raw scores into frames.
+    frames = FrameMapper.new.map @scores
     
-    # Function composition using the Funkify gem.
-    # Acts like a mapreduce chain.
-    # Set end game to kick in after 10 frames (standard game) using partial application.
-    return (frame_mapper.map | end_game.map(10) | score_mapper.map).(@scores)
+    # Inject custom scoring logic for the 'end game' bonus shots.
+    # For this we use a standard game setup, consisting of 10 frames.
+    end_game_processed_frames = EndGameHandler.new.map 10, frames
+    
+    # Obtain a list of scores per frame.
+    scores_per_frame = ScoreMapper.new.map end_game_processed_frames
+    
+    return scores_per_frame
   end
 end
