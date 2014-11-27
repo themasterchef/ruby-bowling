@@ -1,6 +1,7 @@
+require 'settings'
+
 ##
-# Though the task says 'object oriented programming', the secret here is
-# that like so many other mathsy / algorithmic problems implemented in
+# Like so many other mathsy / algorithmic problems implemented in
 # code, it is sometimes cleaner to use a functional programming
 # implementation. Ruby's functional extensions allow us to integrate the
 # FP backend with the OOP external API surface in the Game class with
@@ -45,7 +46,7 @@ class ScoreMapper
       # Insert the || 0 to deal with the case where frame is empty.
       x = frames[0][0] || 0
       
-      if x == 10
+      if x == Settings[:strike]
         # Strike. Y must come from the (frame + 1).
         y = frames[1][0] || 0
         # If Y was a strike then Z will come from frames[2].
@@ -60,7 +61,7 @@ class ScoreMapper
         # Not a strike. Y comes from same frame as X.
         y = frames[0][1] || 0
         
-        if (x + y) == 10
+        if (x + y) == Settings[:spare]
           # Spare condition. Z comes from first shot in next frame.
           # Note that it may not have been performed yet.
           z = frames[1][0] || 0

@@ -1,3 +1,4 @@
+require 'settings'
 require 'score_mapper'
 require 'end_game_handler'
 require 'frame_mapper'
@@ -39,8 +40,9 @@ class Game
     frames = FrameMapper.new.map @scores
     
     # Inject custom scoring logic for the 'end game' bonus shots.
-    # For this we use a standard game setup, consisting of 10 frames.
-    end_game_processed_frames = EndGameHandler.new.map 10, frames
+    # For this we ask the Settings configuration object how many frames should be
+    # in the game.
+    end_game_processed_frames = EndGameHandler.new.map Settings[:num_frames], frames
     
     # Obtain a list of scores per frame.
     scores_per_frame = ScoreMapper.new.map end_game_processed_frames
